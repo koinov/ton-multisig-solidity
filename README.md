@@ -20,9 +20,13 @@ First of all, there's no signature checks and there's no way to get msg.sender f
 ## Contracts 
 
 This contracts structure is following:
+
 MultisigWallet - manages grams
+
 WalletManager - manages wallets
+
 UserRegistry - manages users
+
 
 More documentation wil be provided later, it is a good option to check [multisig.js](__tests__/multisig.js) for the flow.
 
@@ -34,7 +38,7 @@ K means number of confirmations required to perform transfer.
 
 
 ### WalletManager 
-Implementation of Multisig Wallet Manager.  Currenty is done to send msg.sender to Multisig contract, will be merger in MultiSig contract as soon as external messages authorization is implemented.  
+Implementation of Multisig Wallet Manager.  Currenty is done to send msg.sender to Multisig contract, will be merged in MultiSig contract as soon as external messages authorization is implemented.  
 
 ### UserRegistry
 Users registry that allows to find WalletManager address of coowner by the name. 
