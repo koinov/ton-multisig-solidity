@@ -4,8 +4,6 @@ pragma experimental ABIEncoderV2;
 interface MultisigWallet {
     function transfer(address payable recepient, uint256 value) external returns(bool);
     function authorize_transfer(uint256 transfer_id) external returns(bool);
-    function set_pool(address pool) external  returns(bool);
-    function subscribe(uint256 amount) external returns(bool);
     function authorizationConfirm() external returns(bool);
     function authorize(address coowner) external returns(bool);
     function initialize(uint8 k, uint8 n) external returns(bool);
@@ -33,16 +31,6 @@ contract MultisigManager {
     function authorizeTransfer(address wallet, uint256 transfer_id) public returns(bool){
         require(_wallet_status[wallet]==2);
         MultisigWallet(wallet).authorize_transfer(transfer_id);
-        return true;
-    }
-    function setWalletPool(address wallet, address pool) public returns(bool){
-        require(_wallet_status[wallet]==2);
-        MultisigWallet(wallet).set_pool(pool);
-        return true;
-    }
-    function subscribeWallet(address wallet, uint256 amount) public returns(bool){
-        require(_wallet_status[wallet]==2);
-        MultisigWallet(wallet).subscribe(amount);
         return true;
     }
 

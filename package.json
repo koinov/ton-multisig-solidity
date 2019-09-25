@@ -4,7 +4,8 @@
 		"description": "TON Multisig contracts for TON",
 		"main": "index.js",
 		"scripts": {
-				"test": "jest"
+        "test": "jest",
+        "build": "./build.sh"
 		},
 		"author": "coin@delerex.com",
 		"license": "ISC",
